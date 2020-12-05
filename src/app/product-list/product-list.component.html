@@ -4,6 +4,7 @@
 		<a [title]="product.name +'details'" [routerLink]="['/products',productId]">
 			<img [src]="product.url" [style]='"width:150px"'>{{product.name}}</a>
 	</h3>
+	<p>Price :{{product.price | double | currency}}</p>
 	<p *ngIf="product.description">Description: {{product.description}}</p>
 	<button [style]="'background-color: green'" (click)="share($event)">Share</button>
 	<app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
